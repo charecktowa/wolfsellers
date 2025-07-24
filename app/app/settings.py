@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "productos",
+    "drf_yasg",
+    "drf_spectacular",  # Swagger support
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,10 @@ WSGI_APPLICATION = "app.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.openapi.AutoSchema",
+}
 
 DATABASES = {
     "default": {
